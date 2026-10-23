@@ -1,5 +1,7 @@
 import { packager } from '@electron/packager';
 import { fileURLToPath } from 'node:url';
+import { execFileSync } from 'node:child_process';
+import { join } from 'node:path';
 
 const paths = await packager({
   dir: fileURLToPath(new URL('..', import.meta.url)),
@@ -18,4 +20,9 @@ const paths = await packager({
   ignore: [/^\/qa($|\/)/, /^\/tests($|\/)/, /^\/scripts($|\/)/, /^\/dist($|\/)/, /^\/\.git($|\/)/, /^\/src\/vendor($|\/)/],
   extendInfo: { LSUIElement: true, NSHighResolutionCapable: true, CFBundleDisplayName: '蓝色大肥鱼' },
 });
+if (process.platform === 'darwin') {
+  for (const output of paths) {
+    execFileSync('codesign', ['--force', '--deep', '--sign', '-', join(output, '蓝色大肥鱼.app')], { stdio: 'inherit' });
+  }
+}
 console.log(paths.join('\n'));

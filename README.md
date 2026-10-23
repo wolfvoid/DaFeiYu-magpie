@@ -45,12 +45,22 @@ DaFeiYu-magpie 是一个为 **macOS + Magpie** 制作的独立桌宠：大肥鱼
 
 ### 环境
 
-- **Apple Silicon Mac（arm64）**，当前构建目标为 macOS；未验证 Intel Mac、Windows 或 Linux。
-- **Node.js 24+、npm、Python 3**，以及 Git。
+- **Apple Silicon Mac（arm64），macOS 12 或更新版本**；未验证 Intel Mac、Windows 或 Linux。
 - [Magpie](https://github.com/yetone/magpie) 已在本机启动。联动在 Magpie `0.1.1349` 上验证；接口变化可能需要更新适配器。
-- 首次安装需要联网下载 npm 依赖、Electron 和约 52 MB 动画素材。
+
+### 直接安装 App（推荐）
+
+1. 打开 [Releases](https://github.com/wolfvoid/DaFeiYu-magpie/releases/latest)，下载 `DaFeiYu-magpie-v0.1.0-macOS-arm64.zip`。
+2. 解压，将「蓝色大肥鱼.app」拖入「应用程序」，双击打开。更新前先从菜单栏退出旧版。
+3. 启动本机 Magpie，即可查看请求灯泡与账号额度。不需要 Node.js、Python 或 DSH。
+
+App 已包含 106 段动画，只有本地 ad-hoc 签名，**没有 Apple Developer ID 签名或公证**。如果 macOS 拦截，请先核对下载来源，再在「系统设置 → 隐私与安全性」查看是否提供「仍要打开」。本项目不提供关闭 Gatekeeper 的脚本。
+
+发布页附 SHA-256 校验文件。请下载上面命名的 ZIP，GitHub 自动生成的 “Source code.zip” 不是应用安装包。
 
 ### 从源码运行
+
+开发环境需要 **Node.js 24+、npm、Python 3** 和 Git；首次需要联网下载依赖、Electron 和约 52 MB 动画素材。
 
 ```bash
 git clone https://github.com/wolfvoid/DaFeiYu-magpie.git
@@ -72,9 +82,7 @@ npm start
 npm run package
 ```
 
-生成 `dist/蓝色大肥鱼-darwin-arm64/蓝色大肥鱼.app`，可拖入「应用程序」后打开。当前是源码自建版本，**没有 Apple Developer ID 签名或公证**；请按 macOS 的正常安全提示确认来源。本项目不提供关闭 Gatekeeper 的脚本。
-
-> 当前发布以源码为主。不要把 GitHub 的 “Source code.zip” 当作可直接打开的 `.app`。
+生成 `dist/蓝色大肥鱼-darwin-arm64/蓝色大肥鱼.app`，可拖入「应用程序」后打开。macOS 上打包会添加本地 ad-hoc 签名，不等同于 Apple Developer ID 签名或公证。
 
 ## 接入范围
 
@@ -146,6 +154,6 @@ npm start -- --smoke-test    # 实际界面、暂停/继续、灯泡、横排滚
 
 **DaFeiYu-magpie** is an independent **macOS desktop pet for Magpie**, featuring the blue DaFeiYu character, 106 transparent animations, per-request light bulbs, and a horizontal multi-account quota strip. Active accounts turn coral red; other accounts stay slate blue. Each account displays one remaining percentage, using its most constrained quota window.
 
-It reads only the local Magpie gateway. It does not submit inference requests, change routing, or require DSH/Codex to run. Request activity is not full agent-task awareness. Build from source on an Apple Silicon Mac with Node.js 24+, Python 3, and the commands above. The app is currently unsigned and not notarized.
+It reads only the local Magpie gateway. It does not submit inference requests, change routing, or require DSH/Codex to run. Request activity is not full agent-task awareness. Download the ready-to-run ZIP from [Releases](https://github.com/wolfvoid/DaFeiYu-magpie/releases/latest) for Apple Silicon Macs running macOS 12 or later, or build from source with Node.js 24+ and Python 3. The app uses an ad-hoc signature; it has no Apple Developer ID signature or notarization.
 
 **Credits:** character, animation assets, configuration and initial picker code by [PC2005-cloud/dsh-pet](https://github.com/PC2005-cloud/dsh-pet); gateway integration by [yetone/magpie](https://github.com/yetone/magpie). New code is MIT; upstream artwork is **noncommercial and requires attribution**, including in derived screenshots and distributions.
