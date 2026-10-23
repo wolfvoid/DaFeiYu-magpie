@@ -1,0 +1,26 @@
+{
+  "name": "dafeiyu-magpie",
+  "version": "0.1.0",
+  "private": true,
+  "description": "DaFeiYu-magpie — a macOS desktop pet for Magpie with live request lights and multi-account quota badges.",
+  "repository": { "type": "git", "url": "https://github.com/wolfvoid/DaFeiYu-magpie.git" },
+  "homepage": "https://github.com/wolfvoid/DaFeiYu-magpie#readme",
+  "author": "wolfvoid",
+  "license": "MIT",
+  "keywords": ["magpie", "macos", "desktop-pet", "dafeiyu", "deepseek", "electron", "quota-monitor"],
+  "main": "src/main.cjs",
+  "scripts": {
+    "build": "esbuild src/vendor/pickers.ts --format=esm --outfile=src/pickers.mjs",
+    "start": "electron .",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/check.mjs",
+    "package": "node scripts/package.mjs"
+  },
+  "devDependencies": {
+    "electron": "43.3.0",
+    "@electron/packager": "20.3.0",
+    "esbuild": "0.28.2",
+    "jsonc-parser": "3.3.1"
+  }
+}
+

@@ -1,0 +1,15 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'none'"><link rel="stylesheet" href="panel.css"><title>蓝色大肥鱼 · 陪伴面板</title></head>
+<body>
+  <header><div class="eyebrow">YOUR LITTLE MAGPIE COMPANION</div><h1>蓝色大肥鱼 <span>🐋</span></h1><p>认真陪你工作，也认真吃白饭。</p></header>
+  <main>
+    <section class="card"><div class="row"><h2>此刻</h2><span class="badge" id="scope">本机 Magpie</span></div><div class="activity" id="activity">正在读取…</div><p class="note">跟随经过本机 Magpie 的模型请求、排队和可见的工具等待状态。请求结束不代表整个任务完成；无法判断具体文件操作或等待审批。</p><button id="open-magpie" class="secondary">打开 Magpie ↗</button></section>
+    <section class="card"><div class="row"><h2>口粮余量</h2><button id="refresh" class="text-button">刷新</button></div><div id="quota"></div><p class="note" id="quota-time">正在读取 Magpie 额度…</p><p class="note" id="usage"></p></section>
+    <section class="card"><div class="row"><h2>来点小节目</h2><span class="badge">106 段动画</span></div><div class="featured"><button data-play="放烟花">✦ 放烟花</button><button data-play="凭空生花">🪄 凭空生花</button><button data-play="蓝鲸现世">🐋 蓝鲸现世</button></div><input id="search" type="search" placeholder="找动作：魔术、吃饭、睡觉…" aria-label="搜索动作"><div id="actions"></div></section>
+    <section class="card"><h2>陪伴方式</h2><label class="toggle">跟随 Magpie 请求状态<input type="checkbox" data-setting="followTasks"></label><label class="toggle">空闲时随机玩耍<input type="checkbox" data-setting="active"></label><label class="toggle">暂停动画<input type="checkbox" data-setting="paused"></label><label class="toggle">锁定桌面位置<input type="checkbox" data-setting="locked"></label><label class="toggle">角色大小<select id="size"><option value="360">小</option><option value="460">中</option><option value="560">大</option></select></label><p class="note">可拖到屏幕左右边缘，超出部分的动作会被裁切。快速甩出会弹跳；右键可点播、隐藏或退出。菜单栏 🐋 →「回到屏幕内」可随时找回。默认不开机启动。</p></section>
+    <footer>动画与动作选择逻辑：PC2005-cloud/dsh-pet<br>github.com/PC2005-cloud/dsh-pet<br>素材禁止商用，二创保留原作者链接。<br>独立社区工具 · 非 OpenAI / DeepSeek 官方产品<br>本版不主动生成聊天，不调用模型。</footer>
+  </main>
+  <script src="panel.js"></script>
+</body>
+</html>

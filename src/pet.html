@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; media-src 'self'; connect-src 'none'"><link rel="stylesheet" href="pet.css"><title>蓝色大肥鱼</title></head>
+<body>
+  <div id="stage"><video muted playsinline preload="auto"></video><video muted playsinline preload="auto"></video></div>
+  <div id="account-quotas" class="interactive" aria-label="各账号剩余额度，可横向滚动" title="账号较多时可左右滚动查看"></div>
+  <div id="controls">
+    <nav class="interactive" aria-label="桌宠控制">
+      <button id="next-action" title="换一个动作" aria-label="换一个动作"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 3 4 4-4 4M4 7h16M8 21l-4-4 4-4m12 4H4"/></svg></button>
+      <button id="pause" title="暂停动画" aria-label="暂停动画" aria-pressed="false"><svg id="pause-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14M16 5v14"/></svg><svg id="play-icon" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="m8 5 11 7-11 7Z"/></svg></button>
+      <button id="menu" title="更多：额度、动作与设置" aria-label="更多：额度、动作与设置"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="19" cy="12" r="1"/></svg></button>
+    </nav>
+    <div id="request-lights" class="interactive" role="img" aria-label="正在连接 Magpie" title="正在连接 Magpie"></div>
+  </div>
+  <template id="bulb-template"><span class="bulb"><svg viewBox="0 0 24 28" aria-hidden="true"><path class="bulb-glass" d="M6 10a6 6 0 1 1 12 0c0 3-3 4-3 7H9c0-3-3-4-3-7Z"/><path d="M9 21h6m-5 3h4m-2-7v-5m-2-2 2 2 2-2"/><path class="bulb-rays" d="M12 1V0M3 4 1 2m20 2 2-2M2 10H0m22 0h2"/></svg></span></template>
+  <script type="module" src="pet.mjs"></script>
+</body>
+</html>
